@@ -34,7 +34,7 @@ filetype plugin indent on
 map <Enter> i<CR>
 
 " Focus NERDTree when Ctrl+Tab is pressed
-map <C-`> :NERDTreeFocus<CR>
+map <C-n> :NERDTreeFocus<CR>
 
 " Open NERDTree when no arguments are supplied
 autocmd StdinReadPre * let s:std_in=1
