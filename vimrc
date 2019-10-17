@@ -1,4 +1,12 @@
-set nocompatible
+let g:username = "westar"
+let g:usermail = "me@westar.tech"
+
+syntax on
+
+" setup invisible character highlighting
+" toggable by CTRL+h
+map <C-h> :set list!<CR>
+set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,precedes:«,extends:»
 
 " Show line numbers and set them DarkGray
 set number
@@ -7,6 +15,8 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 " Show lightline and disable default mode show
 set noshowmode
 set laststatus=2
+
+set colorcolumn=80
 
 " Set tab to be 4 spots wide
 set tabstop=4
