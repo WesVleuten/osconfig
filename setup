@@ -23,14 +23,20 @@ sudo apt-get install vim -qq > /dev/null;
 echo "Installing xclip";
 sudo apt-get install xclip -qq > /dev/null;
 
-echo "Installing discord";
-sudo snap install discord;
-
-echo "Installing gitkraken";
-sudo snap install gitkraken;
-
 echo "Installing terminal profile";
 dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf;
+
+if [ ! -d ~/.oh-my-zsh ]; then
+	echo "Installing oh-my-zsh";
+
+	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+	chsh -s $(which zsh);
+
+	echo "[NOTICE] Please exit your terminal after installation";
+
+else
+	echo "Skipping oh-my-zsh";
+fi
 
 if [ ! -f ~/.vim/bundle/Vundle.vim/README.md ]; then
 	echo "Installing Vundle";
@@ -63,7 +69,15 @@ ln -f ./i3status.conf ~/.config/i3/status.conf
 echo "Creating link for .vimrc config";
 ln -f ./vimrc ~/.vimrc;
 
+echo "Adding vim header";
+mkdir -p ~/.vim/after/plugin
+ln -f ./wheader.vim ~/.vim/after/plugin
+
+echo "Installing vim plugins";
+vim +PluginInstall +qall;
+
 echo "Setting timezone";
 sudo timedatectl set-timezone 'Europe/Amsterdam';
 echo "Please check if the date is set correctly!";
 date;
+

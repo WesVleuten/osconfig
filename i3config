@@ -183,9 +183,3 @@ bar {
 
 bindsym $mod+Shift+f exec firefox 
 
-assign [class="discord"] $ws10
-assign [class="Firefox"] $ws2
-
-exec firefox
-exec discord
-
