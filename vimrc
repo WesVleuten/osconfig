@@ -1,5 +1,5 @@
 let g:username = "westar"
-let g:usermail = "me@westar.tech"
+let g:usermail = "me@wes.cloud"
 
 syntax on
 

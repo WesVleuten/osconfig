@@ -1,9 +1,12 @@
 #!/bin/bash
 
+NAME="Wes van der Vleuten"
+EMAIL="me@wes.cloud"
+
+
 echo "osconfig by WesVleuten";
 echo "Starting now...";
 echo "----";
-
 
 echo "Updating apt repositories";
 sudo apt-get update -qq > /dev/null;
@@ -16,6 +19,8 @@ sudo apt-get install i3 -qq > /dev/null;
 
 echo "Installing git";
 sudo apt-get install git -qq > /dev/null;
+git config --global user.email "$EMAIL"
+git config --global user.name "$NAME"
 
 echo "Installing vim";
 sudo apt-get install vim -qq > /dev/null;
@@ -25,6 +30,9 @@ sudo apt-get install xclip -qq > /dev/null;
 
 echo "Installing terminal profile";
 dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf;
+
+echo "Installing zsh";
+sudo apt-get install zsh -qq > /dev/null;
 
 if [ ! -d ~/.oh-my-zsh ]; then
 	echo "Installing oh-my-zsh";
