@@ -3,10 +3,18 @@ let g:usermail = "me@wes.cloud"
 
 syntax on
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
+
 " setup invisible character highlighting
 " toggable by CTRL+h
-map <C-h> :set list!<CR>
-set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,precedes:«,extends:»
+" map <C-h> :set list!<CR>
+" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,precedes:«,extends:»
 
 " Show line numbers and set them DarkGray
 set number
@@ -24,6 +32,9 @@ set tabstop=4
 " Defensive defaults for tabs
 set softtabstop=0 noexpandtab
 set shiftwidth=4
+
+" Enable mouse
+set mouse=a
 
 filetype off
 
