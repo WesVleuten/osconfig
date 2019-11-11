@@ -8,6 +8,9 @@ xcode-select --install
 brew install vim
 mv /usr/bin/vim /usr/bin/vimold
 
+# Install thefuck for zsh plugin
+brew install thefuck
+
 # Set defaults in plist
 # Update check frequency
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
